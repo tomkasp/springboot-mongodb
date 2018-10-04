@@ -19,7 +19,9 @@ public class MongodbApplication {
     @PostConstruct
     public void run(){
         sportActivityRepository.deleteAll();
-        SportActivity sportActivity = new SportActivity("title");
-        sportActivityRepository.save(sportActivity);
+        ManualSportActivity manualSportActivity = new ManualSportActivity("title");
+        StravaSportActivity stravaSportActivity = new StravaSportActivity("Kasprzycki");
+        sportActivityRepository.save(manualSportActivity);
+        sportActivityRepository.save(stravaSportActivity);
     }
 }
